@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --dark-wood-bg: #532b05; /* Dark brown from the image */
+    --light-wood-bg: #704241; /* Slightly lighter brown for main content */
+    --text-cream: #F8F4E3; /* Creamy white for main text and icons */
+    --input-bg: #F8F4E3; /* Creamy white for input background */
+    --input-text: #333333; /* Dark text for input */
+    --button-bg: #f8c290; /* Muted blue for the button */
+    --button-bg-hover:  #f5972d /* Slightly musturd for button hover */
+    --button-text: #333333; /* Dark text for the button */
+    --list-item-bg: transparent; /* List items are transparent on the wood background */
+    --list-item-text: #F8F4E3; /* Creamy white for list item text */
+    --line-color: rgba(255, 255, 255, 0.2); /* Subtle white line for list item separators */
+    --error-color: #FF6347; /* Tomato red for error messages */
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0; 
+    background-image: url(https://images.pexels.com/photos/30858575/pexels-photo-30858575.jpeg?_gl=1*1pt6d68*_ga*MjYxNjI3ODc3LjE3Mzc2ODk3MzQ.*_ga_8JE65Q40S6*czE3NTE5ODgyMTMkbzQ5JGcxJHQxNzUxOTg4NzE2JGo1OSRsMCRoMA..);
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    .prompt{
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: 2rem;
+        padding: 20px;
+    }
+}
+
+.widget-container {
+    max-width: 45rem; 
+    width: 100%; 
+    background-color: var(--dark-wood-bg); 
+    border-radius: 0; 
+    box-shadow: none; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Masthead */
+.masthead {
+    background-color: var(--dark-wood-bg); 
+    color: var(--text-cream);
+    padding: 4rem 0 3rem; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+    border-bottom: none; 
+}
+
+.masthead-image {
+    width: 10rem; 
+    height: auto;
+    filter: invert(1); /* To make the basket icon white */
+    opacity: 1; 
+    margin-bottom: 0.5rem; 
+}
+
+.masthead-tagline {
+    font-family: 'Inter', sans-serif; 
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    letter-spacing: 0.15rem; 
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); 
+}
+
+/* Main Content */
+.main-content {
+    padding: 2.5rem 2.5rem 0; 
+    background-color: var(--dark-wood-bg); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+    flex-grow: 1; 
+}
+
+.prompt {
+    color: var(--text-cream);
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#itemInput {
+    width: calc(100% - 2rem); 
+    padding: 1rem;
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1.1rem;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease;
+}
+
+#itemInput::placeholder {
+    color: var(--input-text);
+    opacity: 0.6; 
+}
+
+#itemInput:focus {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--button-bg); 
+}
+
+#addItemBtn {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
+    letter-spacing: 0.05rem;
+}
+
+#addItemBtn:hover {
+    background-color: #f5972d; 
+    transform: translateY(-1px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#addItemBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.feedback { 
+    color: var(--error-color);
+    font-size: 1rem;
+    min-height: 1.2rem; 
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+#shoppingList {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2.5rem; 
+    width: 100%;
+}
+
+#shoppingList li {
+    background-color: var(--list-item-bg); 
+    color: var(--list-item-text);
+    padding: 0.8rem 0; 
+    margin-bottom: 0; 
+    border-radius: 0; 
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    box-shadow: none; 
+    border-bottom: 1px solid var(--line-color); 
+    transition: background-color 0.2s ease;
+}
+
+#shoppingList li:last-child {
+    border-bottom: none; 
+}
+
+#shoppingList li:hover {
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+#shoppingList li::before {
+    content: '›'; 
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    color: var(--text-cream); 
+    font-weight: bold;
+    line-height: 1; 
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-wood-bg); 
+    padding: 1.5rem 0 2rem; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-top: 1px solid var(--button-bg); 
+
+}
+
+.footer a {
+    color: var(--text-cream);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer a:hover {
+    color: var(--button-bg); 
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .widget-container {
+        min-height: 100vh; 
+    }
+
+    .masthead-tagline {
+        font-size: 2.5rem;
+    }
+
+    .main-content {
+        padding: 2rem 2rem 0;
+    }
+
+    #itemInput, #addItemBtn {
+        width: 100%;
+    }
+
+    #shoppingList {
+        margin: 1rem 0 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .masthead-image {
+        width: 6rem;
+    }
+
+    .masthead-tagline {
+        font-size: 2rem;
+    }
+
+    .prompt {
+        font-size: 1rem;
+    }
+
+    #itemInput, #addItemBtn, #shoppingList li {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .footer a {
+        font-size: 1.5rem;
+    }
+}
