@@ -36,7 +36,7 @@ body {
 }
 
 .widget-container {
-    max-width: 55rem; 
+    max-width: 100rem; 
     width: 100%; 
     background-color: var(--dark-wood-bg); 
     border-radius: 0; 
